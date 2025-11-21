@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MetaRoot Technologies Ltd – Rooted in the Future</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --gold: #c8a75c;
+      --dark: #06070a;
+      --light: #ffffff;
+      --muted: #d7d7d7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* HEADER */
+    header {
+      padding: 16px 0 8px;
+      border-bottom: 1px solid #222832;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: linear-gradient(to bottom, #06070a, rgba(6,7,10,0.9));
+      backdrop-filter: blur(10px);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .logo-main {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-size: 13px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      margin-left: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #111;
+      border-color: var(--gold);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold);
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-secondary:hover { background: rgba(200,167,92,0.1); }
+
+    /* NEWS TICKER (moving headline) */
+    .ticker-wrap {
+      margin-top: 8px;
+      border-top: 1px solid #1d2530;
+      border-bottom: 1px solid #1d2530;
+      overflow: hidden;
+      background: #05060a;
+    }
+    .ticker {
+      display: inline-block;
+      white-space: nowrap;
+      animation: ticker 22s linear infinite;
+      padding: 6px 0;
+    }
+    .ticker span {
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-right: 36px;
+    }
+    .ticker span strong {
+      color: var(--gold);
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 60px 0 80px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 40px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 4vw, 40px);
+      margin-bottom: 16px;
+    }
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 24px;
+      max-width: 540px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(200,167,92,0.4);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .hero-small {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-card {
+      border-radius: 20px;
+      border: 1px solid #262f3d;
+      padding: 20px 18px;
+      width: 100%;
+      max-width: 320px;
+      background: radial-gradient(circle at top left, rgba(200,167,92,0.18), #05060a);
+    }
+    .hero-card h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .hero-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 60px 0;
+      border-top: 1px solid #1d2530;
+    }
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .section p {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 12px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .card {
+      border-radius: 16px;
+      border: 1px solid #262f3d;
+      padding: 18px 18px 20px;
+      background: radial-gradient(circle at top left, rgba(200,167,92,0.12), #06070a);
+    }
+    .card h3 { font-size: 16px; margin-bottom: 6px; }
+    .card p { font-size: 14px; }
+
+    /* CONTACT */
+    .contact-form {
+      margin-top: 20px;
+      max-width: 520px;
+    }
+    .field { margin-bottom: 12px; }
+    .field label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #2a3443;
+      background: #0b0e13;
+      color: var(--light);
+      font-size: 14px;
+    }
+    .field textarea { min-height: 80px; resize: vertical; }
+
+    footer {
+      padding: 24px 0 32px;
+      border-top: 1px solid #1d2530;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); margin-left: 10px; }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+      }
+      nav { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .nav-links { display: flex; flex-wrap: wrap; }
+      .nav-links a { margin-left: 0; margin-right: 12px; margin-top: 4px; }
+      .ticker span { font-size: 10px; }
+      .hero-right { order: -1; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <img src="assets/images/metaroot-logo.png" alt="MetaRoot logo" class="logo-mark" />
+        <div class="logo-text">
+          <div class="logo-main">MetaRoot Technologies Ltd</div>
+          <div class="logo-sub">Rooted in the Future</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">Who is MetaRoot?</a>
+        <a href="#focus">What We Build</a>
+        <a href="apps.html">App Preview</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- moving headline bar -->
+  <div class="ticker-wrap">
+    <div class="container">
+      <div class="ticker">
+        <span><strong>Work-first mobile apps</strong> for drivers, traders & communities</span>
+        <span><strong>Intelligent data bundles</strong> that focus on the apps that pay you</span>
+        <span><strong>APIs & integrations</strong> for telcos, fintechs and digital partners</span>
+        <span><strong>Real-world analytics</strong> – earnings, usage and behaviour insights</span>
+        <!-- repeat a second time so the loop feels continuous -->
+        <span><strong>Work-first mobile apps</strong> for drivers, traders & communities</span>
+        <span><strong>Intelligent data bundles</strong> that focus on the apps that pay you</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero container">
+    <div>
+      <div class="pill">Rooted in the Future</div>
+      <h1>Building the digital roots of everyday work and connectivity.</h1>
+      <p>
+        MetaRoot Technologies builds infrastructure-level tools for the real world – mobile apps,
+        data rails and partner integrations that help people work, move and earn with more clarity,
+        control and support.
+      </p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#contact" class="btn btn-primary">Talk to MetaRoot</a>
+        <a href="apps.html" class="btn btn-secondary">View App Preview</a>
+      </div>
+      <div class="hero-small">
+        You can reach us directly at
+        <a href="mailto:metaroottech@outlook.com">metaroottech@outlook.com</a>.
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card">
+        <h3>Company Objective</h3>
+        <p>
+          To become the core layer that connects workers, platforms, telcos and financial systems –
+          starting from Africa, built for global scale. One ecosystem, many specialised apps.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IS METAROOT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>Who is MetaRoot?</h2>
+      <p>
+        MetaRoot Technologies Ltd is a product studio and technology company focused on the “roots”
+        of everyday digital life – connectivity, data, payments and simple tools that help real
+        people do real work.
+      </p>
+      <p>
+        We are not just building one app. MetaRoot is an ecosystem of services that can be branded,
+        white-labelled and integrated with partners who serve drivers, merchants, communities and
+        new kinds of digital workers across Africa and beyond.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD -->
+  <section id="focus" class="section">
+    <div class="container">
+      <h2>What We Build</h2>
+      <p>Our work is organised around a few clear pillars:</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Work-First Mobile Apps</h3>
+          <p>
+            Tools that help drivers, riders, traders and field workers see their earnings, costs and
+            opportunities clearly – not just move from trip to trip.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Smart Connectivity & Data</h3>
+          <p>
+            Partnerships with telcos and ISPs to create bundles that prioritise high-value apps:
+            maps, ride-hailing, chat, finance and verified work tools.
+          </p>
+        </div>
+        <div class="card">
+          <h3>APIs & White-Label Systems</h3>
+          <p>
+            Infrastructure that allows fleets, cooperatives, fintechs and telcos to launch their own
+            branded experiences powered by MetaRoot in the background.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS / WHO IT'S FOR -->
+  <section class="section">
+    <div class="container">
+      <h2>Who We Work With</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Drivers & Field Workers</h3>
+          <p>People whose income depends on movement, connectivity and clear information.</p>
+        </div>
+        <div class="card">
+          <h3>Telcos & ISPs</h3>
+          <p>Network operators looking for focused, work-centric data products and insights.</p>
+        </div>
+        <div class="card">
+          <h3>Fintech & Digital Platforms</h3>
+          <p>Partners building credit, savings, insurance and marketplaces around real behaviour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Let’s Build Together</h2>
+      <p>
+        MetaRoot is open to strategic partners, early-stage investors and pilot users.
+        Share a few details and we’ll follow up from
+        <a href="mailto:metaroottech@outlook.com">metaroottech@outlook.com</a>.
+      </p>
+      <form class="contact-form">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your full name" />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" />
+        </div>
+        <div class="field">
+          <label for="org">Organisation (optional)</label>
+          <input id="org" type="text" placeholder="Company, fleet, or role" />
+        </div>
+        <div class="field">
+          <label for="msg">How would you like to work with MetaRoot?</label>
+          <textarea id="msg" placeholder="Driver, platform, telco, fintech, investor..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+      <div>© 2025 MetaRoot Technologies Ltd. All rights reserved.</div>
+      <div>
+        <a href="mailto:metaroottech@outlook.com">metaroottech@outlook.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
