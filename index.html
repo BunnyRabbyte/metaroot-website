@@ -266,7 +266,23 @@
       font-size: 12px;
       color: var(--muted);
     }
-    footer a { color: var(--muted); margin-left: 10px; }
+    footer a { color: var(--muted); }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-links a {
+      font-size: 12px;
+    }
 
     @media (max-width: 768px) {
       .hero {
@@ -309,7 +325,6 @@
         <span><strong>Intelligent data bundles</strong> that focus on the apps that pays you</span>
         <span><strong>APIs & integrations</strong> for telcos, fintechs and digital partners</span>
         <span><strong>Real-world analytics</strong> – earnings, usage and behaviour insights</span>
-        <!-- repeat a second time so the loop feels continuous -->
         <span><strong>Work-first mobile apps</strong> for companies, traders & communities</span>
         <span><strong>Intelligent data bundles</strong> that focus on the apps that pay you</span>
       </div>
@@ -453,9 +468,12 @@
 
 <footer>
   <div class="container">
-    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+    <div class="footer-row">
       <div>© 2025 MetaRoot Technologies Ltd. All rights reserved.</div>
-      <div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="cookies.html">Cookie Policy</a>
         <a href="mailto:metaroottech@outlook.com">metaroottech@outlook.com</a>
       </div>
     </div>
