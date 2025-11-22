@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <title>MetaRoot Technologies Ltd – Rooted in the Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="MetaRoot Technologies Ltd builds work-first mobile apps, smart connectivity tools and partner integrations for companies, traders and communities."
+  />
   <style>
     :root {
       --gold: #c8a75c;
@@ -12,6 +16,11 @@
       --muted: #d7d7d7;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--dark);
@@ -19,6 +28,7 @@
       line-height: 1.6;
     }
     a { color: inherit; text-decoration: none; }
+
     .container {
       width: 100%;
       max-width: 1120px;
@@ -73,6 +83,21 @@
       margin-left: 16px;
       font-size: 14px;
       color: var(--muted);
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.18s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .btn {
@@ -171,6 +196,7 @@
       width: 100%;
       max-width: 320px;
       background: radial-gradient(circle at top left, rgba(200,167,92,0.18), #05060a);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
     }
     .hero-card h3 {
       font-size: 16px;
@@ -206,6 +232,7 @@
       border: 1px solid #262f3d;
       padding: 18px 18px 20px;
       background: radial-gradient(circle at top left, rgba(200,167,92,0.12), #06070a);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     }
     .card h3 { font-size: 16px; margin-bottom: 6px; }
     .card p { font-size: 14px; }
@@ -279,7 +306,7 @@
     <div class="container">
       <div class="ticker">
         <span><strong>Work-first mobile apps</strong> for companies, traders & communities</span>
-        <span><strong>Intelligent data bundles</strong> that focus on the apps that pay you</span>
+        <span><strong>Intelligent data bundles</strong> that focus on the apps that pays you</span>
         <span><strong>APIs & integrations</strong> for telcos, fintechs and digital partners</span>
         <span><strong>Real-world analytics</strong> – earnings, usage and behaviour insights</span>
         <!-- repeat a second time so the loop feels continuous -->
@@ -377,7 +404,7 @@
       <h2>Who We Work With</h2>
       <div class="grid-3">
         <div class="card">
-          <h3>Companies & Field Workers</h3>
+          <h3>Companies & Government</h3>
           <p>People whose income depends on movement, connectivity and clear information.</p>
         </div>
         <div class="card">
@@ -401,7 +428,7 @@
         Share a few details and we’ll follow up from
         <a href="mailto:metaroottech@outlook.com">metaroottech@outlook.com</a>.
       </p>
-      <form class="contact-form">
+      <form class="contact-form" onsubmit="return false;">
         <div class="field">
           <label for="name">Name</label>
           <input id="name" type="text" placeholder="Your full name" />
@@ -412,7 +439,7 @@
         </div>
         <div class="field">
           <label for="org">Organisation (optional)</label>
-          <input id="org" type="text" placeholder="Companies, fleet, or role" />
+          <input id="org" type="text" placeholder="Companies, parastatal, or role" />
         </div>
         <div class="field">
           <label for="msg">How would you like to work with MetaRoot?</label>
