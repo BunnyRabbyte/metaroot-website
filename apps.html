@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <title>MetaRoot App Preview</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ICON LIBRARY (Font Awesome) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <style>
     :root {
       --gold: #c8a75c;
@@ -115,18 +125,33 @@
       padding: 14px 14px 16px;
       scroll-snap-align: start;
     }
+
+    .icon-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.55);
+      color: var(--gold);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
     .app-image {
       width: 100%;
-      height: 180px;
+      height: 160px;
       border-radius: 12px;
       background-size: cover;
       background-position: center;
       margin-bottom: 10px;
     }
-    /* You can replace these gradients with real screenshots later */
-    .app-chat  { background-image: linear-gradient(135deg, #141e30, #243b55); }
-    .app-sports{ background-image: linear-gradient(135deg, #0f2027, #2c5364); }
-    .app-news  { background-image: linear-gradient(135deg, #42275a, #734b6d); }
+    /* Gradients as temporary “screenshots” */
+    .app-chat    { background-image: linear-gradient(135deg, #141e30, #243b55); }
+    .app-food    { background-image: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b); }
+    .app-sports  { background-image: linear-gradient(135deg, #0f2027, #2c5364); }
+    .app-news    { background-image: linear-gradient(135deg, #42275a, #734b6d); }
     .app-finance { background-image: linear-gradient(135deg, #355c7d, #6c5b7b); }
 
     .slide h3 {
@@ -189,7 +214,7 @@
       <h1>Preview the MetaRoot App Ecosystem</h1>
       <p>
         These are early visual directions for the kinds of apps MetaRoot is building – chat,
-        sports, news and finance experiences designed around verified work and real-world use.
+        sports, food, news and finance experiences designed around verified work and real-world use.
         All designs are subject to change as we test with pilot users and partners.
       </p>
     </div>
@@ -199,9 +224,15 @@
     <div class="container">
       <div class="slider-title">Slide through the concepts:</div>
       <div class="slides">
+
+        <!-- CHAT -->
         <article class="slide">
+          <div class="icon-badge">
+            <i class="fa-solid fa-message"></i>
+          </div>
           <div class="app-image app-chat"></div>
           <h3>MetaRoot Chat</h3>
+          <div class="slide-icon">💬</div>
           <p>Lightweight messaging built for work circles, fleets and communities, not noise.</p>
           <div class="tag-row">
             <span class="tag">Work Groups</span>
@@ -210,9 +241,30 @@
           </div>
         </article>
 
+        <!-- FOOD -->
         <article class="slide">
+          <div class="icon-badge">
+            <i class="fa-solid fa-burger"></i>
+          </div>
+          <div class="app-image app-food"></div>
+          <h3>MetaRoot Food</h3>
+          <div class="slide-icon">🍲</div>
+          <p>Professional food ordering and delivery with clear communication between kitchens, riders and customers.</p>
+          <div class="tag-row">
+            <span class="tag">Live Orders</span>
+            <span class="tag">Payment Options</span>
+            <span class="tag">Customer Support</span>
+          </div>
+        </article>
+
+        <!-- SPORTS -->
+        <article class="slide">
+          <div class="icon-badge">
+            <i class="fa-solid fa-football"></i>
+          </div>
           <div class="app-image app-sports"></div>
           <h3>MetaRoot Sports</h3>
+          <div class="slide-icon">🏟</div>
           <p>Real-time scores, fixtures and highlights tuned for fans on the move.</p>
           <div class="tag-row">
             <span class="tag">Live Scores</span>
@@ -221,9 +273,14 @@
           </div>
         </article>
 
+        <!-- NEWS -->
         <article class="slide">
+          <div class="icon-badge">
+            <i class="fa-solid fa-newspaper"></i>
+          </div>
           <div class="app-image app-news"></div>
           <h3>MetaRoot News</h3>
+          <div class="slide-icon">📰</div>
           <p>Curated headlines that focus on finance, mobility and opportunities, not noise.</p>
           <div class="tag-row">
             <span class="tag">Business</span>
@@ -232,9 +289,14 @@
           </div>
         </article>
 
+        <!-- WALLET / FINANCE -->
         <article class="slide">
+          <div class="icon-badge">
+            <i class="fa-solid fa-wallet"></i>
+          </div>
           <div class="app-image app-finance"></div>
           <h3>MetaRoot Wallet</h3>
+          <div class="slide-icon">💳</div>
           <p>Future concept for earnings tracking, savings and work-based credit signals.</p>
           <div class="tag-row">
             <span class="tag">Earnings</span>
@@ -242,6 +304,7 @@
             <span class="tag">Credit Signals</span>
           </div>
         </article>
+
       </div>
     </div>
   </section>
