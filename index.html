@@ -45,6 +45,7 @@
       z-index: 20;
       background: linear-gradient(to bottom, #06070a, rgba(6,7,10,0.9));
       backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6); /* added to make header pop */
     }
     nav {
       display: flex;
@@ -58,8 +59,8 @@
       gap: 10px;
     }
     .logo-mark {
-      width: 40px;
-      height: 40px;
+      width: 190px;      /* was 40px – bigger logo */
+      height: 190px;     /* was 40px – bigger logo */
       object-fit: contain;
     }
     .logo-text {
@@ -68,14 +69,14 @@
       gap: 2px;
     }
     .logo-main {
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-weight: 900;           /* was 700 – bolder */
+      letter-spacing: 0.14em;     /* was 0.08em – more spaced, more visible */
       text-transform: uppercase;
       color: var(--gold);
-      font-size: 13px;
+      font-size: 20px;            /* was 13px – larger title text */
     }
     .logo-sub {
-      font-size: 11px;
+      font-size: 15px;            /* slightly bigger subtitle */
       color: var(--muted);
     }
 
@@ -443,22 +444,34 @@
         Share a few details and we’ll follow up from
         <a href="mailto:metaroottech@outlook.com">metaroottech@outlook.com</a>.
       </p>
-      <form class="contact-form" onsubmit="return false;">
+
+      <!-- UPDATED FORM: send via mailto -->
+      <form
+        class="contact-form"
+        action="mailto:metaroottech@outlook.com"
+        method="post"
+        enctype="text/plain"
+        target="_blank"
+      >
         <div class="field">
           <label for="name">Name</label>
-          <input id="name" type="text" placeholder="Your full name" />
+          <input id="name" name="name" type="text" placeholder="Your full name" />
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input id="email" type="email" placeholder="you@example.com" />
+          <input id="email" name="email" type="email" placeholder="you@example.com" />
         </div>
         <div class="field">
           <label for="org">Organisation (optional)</label>
-          <input id="org" type="text" placeholder="Companies, parastatal, or role" />
+          <input id="org" name="organisation" type="text" placeholder="Companies, parastatal, or role" />
         </div>
         <div class="field">
           <label for="msg">How would you like to work with MetaRoot?</label>
-          <textarea id="msg" placeholder="Companies, platform, telco, fintech, investor..."></textarea>
+          <textarea
+            id="msg"
+            name="message"
+            placeholder="Companies, platform, telco, fintech, investor..."
+          ></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send Message</button>
       </form>
