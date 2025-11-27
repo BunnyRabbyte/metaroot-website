@@ -4,13 +4,15 @@
   <meta charset="UTF-8" />
   <title>Cookie Policy – MetaRoot Technologies Ltd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- FAVICONS -->
   <link rel="icon" type="image/png" href="assets/images/favicon.PNG">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon_16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="assets/images/favicon_48.png">
-<link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon_64.png">
-<link rel="icon" type="image/png" sizes="128x128" href="assets/images/favicon_128.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/images/favicon_48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon_64.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/images/favicon_128.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_180.png">
 
   <style>
     :root {
@@ -27,21 +29,44 @@
       color: var(--light);
       line-height: 1.6;
     }
+    body.light-theme {
+      --dark: #f4f4f7;
+      --light: #111111;
+      --muted: #4b4b4b;
+      background: var(--dark);
+      color: var(--light);
+    }
+
     a { color: var(--gold); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    .container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 24px 16px 40px;
-    }
 
     header {
       padding: 16px 0 12px;
       border-bottom: 1px solid #222832;
       margin-bottom: 24px;
+      background: linear-gradient(to bottom, #06070a, rgba(6,7,10,0.9));
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
+    body.light-theme header {
+      background: linear-gradient(to bottom, #ffffff, rgba(255,255,255,0.9));
+      border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .header-inner {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
     .logo-row {
       display: flex;
       align-items: center;
@@ -58,6 +83,32 @@
       text-transform: uppercase;
       color: var(--gold);
       font-size: 20px;
+    }
+
+    .theme-toggle {
+      border-radius: 999px;
+      border: 1px solid #444;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 7px 12px;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.06);
+    }
+    body.light-theme .theme-toggle {
+      border-color: #cfcfcf;
+      color: #555;
+      background: #ffffff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
     }
 
     h1 {
@@ -79,6 +130,7 @@
       color: var(--muted);
       font-size: 14px;
     }
+
     footer {
       margin-top: 32px;
       padding-top: 16px;
@@ -90,105 +142,149 @@
       flex-wrap: wrap;
       gap: 8px;
     }
+    body.light-theme footer {
+      border-top: 1px solid #e0e0e0;
+    }
     .footer-links a {
       margin-left: 10px;
       color: var(--muted);
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .logo-mark {
+        width: 150px;
+        height: 150px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo-row">
-        <img src="assets/images/metaroot-logo.PNG" alt="MetaRoot logo" class="logo-mark" />
-        <div class="logo-main">MetaRoot Technologies Ltd</div>
-      </div>
-    </header>
-
-    <h1>Cookie Policy</h1>
-    <p><strong>Last updated:</strong> 22 November 2025</p>
-
-    <p>
-      This Cookie Policy explains how MetaRoot Technologies Ltd (“MetaRoot”, “we”, “our”, “us”)
-      uses cookies and similar technologies on our website <a href="https://metaroot.tech">metaroot.tech</a>.
-    </p>
-
-    <h2>1. What Are Cookies?</h2>
-    <p>
-      Cookies are small text files stored on your device (computer, phone or tablet) when you
-      visit a website. They help the website recognise your device and remember information
-      about your visit.
-    </p>
-
-    <h2>2. How We Use Cookies</h2>
-    <p>
-      At this early stage, MetaRoot may use only basic cookies, for example to:
-    </p>
-    <ul>
-      <li>Keep the website running securely and reliably.</li>
-      <li>Understand simple usage patterns (such as which pages are visited) if we enable analytics.</li>
-    </ul>
-    <p>
-      As our products evolve, we may introduce additional cookies to support login, preferences
-      or integrations. This policy will be updated if that happens.
-    </p>
-
-    <h2>3. Types of Cookies We May Use</h2>
-    <ul>
-      <li>
-        <strong>Strictly necessary cookies</strong> – required for basic security and core functionality.
-      </li>
-      <li>
-        <strong>Analytics cookies</strong> – to help us understand how visitors use our website so we can
-        improve content and performance.
-      </li>
-    </ul>
-
-    <h2>4. Third-Party Cookies</h2>
-    <p>
-      If we use third-party services (for example, analytics tools or embedded content), those
-      providers may place cookies on your device. Their use of cookies is governed by their own
-      privacy and cookie policies.
-    </p>
-
-    <h2>5. Managing Cookies</h2>
-    <p>
-      Most browsers allow you to manage or delete cookies through their settings. You can usually:
-    </p>
-    <ul>
-      <li>Block all cookies.</li>
-      <li>Block cookies from specific sites.</li>
-      <li>Delete existing cookies.</li>
-    </ul>
-    <p>
-      If you choose to block certain cookies, some features of our website may not function
-      correctly.
-    </p>
-
-    <h2>6. Changes to This Cookie Policy</h2>
-    <p>
-      We may update this Cookie Policy from time to time as our website and products change
-      or as legal requirements evolve. The “Last updated” date at the top indicates the most
-      recent version.
-    </p>
-
-    <h2>7. Contact Us</h2>
-    <p>
-      If you have any questions about our use of cookies or this policy, please contact us at:
-    </p>
-    <p>
-      <strong>Email:</strong> <a href="mailto:metaroottech@outlook.com">metaroottech@outlook.com</a><br />
-      <strong>Website:</strong> <a href="https://metaroot.tech">https://metaroot.tech</a>
-    </p>
-
-    <footer>
-      <div>© 2025 MetaRoot Technologies Ltd.</div>
-      <div class="footer-links">
-        <a href="index.html">Back to Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-      </div>
-    </footer>
+<header>
+  <div class="header-inner">
+    <div class="logo-row">
+      <img src="assets/images/metaroot-logo.PNG" alt="MetaRoot logo" class="logo-mark" />
+      <div class="logo-main">MetaRoot Technologies Ltd</div>
+    </div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark theme">
+      ☀
+    </button>
   </div>
+</header>
+
+<div class="container">
+  <h1>Cookie Policy</h1>
+  <p><strong>Last updated:</strong> 22 November 2025</p>
+
+  <p>
+    This Cookie Policy explains how MetaRoot Technologies Ltd (“MetaRoot”, “we”, “our”, “us”)
+    uses cookies and similar technologies on our website <a href="https://metaroot.tech">metaroot.tech</a>.
+  </p>
+
+  <h2>1. What Are Cookies?</h2>
+  <p>
+    Cookies are small text files stored on your device (computer, phone or tablet) when you
+    visit a website. They help the website recognise your device and remember information
+    about your visit.
+  </p>
+
+  <h2>2. How We Use Cookies</h2>
+  <p>
+    At this early stage, MetaRoot may use only basic cookies, for example to:
+  </p>
+  <ul>
+    <li>Keep the website running securely and reliably.</li>
+    <li>Understand simple usage patterns (such as which pages are visited) if we enable analytics.</li>
+  </ul>
+  <p>
+    As our products evolve, we may introduce additional cookies to support login, preferences
+    or integrations. This policy will be updated if that happens.
+  </p>
+
+  <h2>3. Types of Cookies We May Use</h2>
+  <ul>
+    <li>
+      <strong>Strictly necessary cookies</strong> – required for basic security and core functionality.
+    </li>
+    <li>
+      <strong>Analytics cookies</strong> – to help us understand how visitors use our website so we can
+      improve content and performance.
+    </li>
+  </ul>
+
+  <h2>4. Third-Party Cookies</h2>
+  <p>
+    If we use third-party services (for example, analytics tools or embedded content), those
+    providers may place cookies on your device. Their use of cookies is governed by their own
+    privacy and cookie policies.
+  </p>
+
+  <h2>5. Managing Cookies</h2>
+  <p>
+    Most browsers allow you to manage or delete cookies through their settings. You can usually:
+  </p>
+  <ul>
+    <li>Block all cookies.</li>
+    <li>Block cookies from specific sites.</li>
+    <li>Delete existing cookies.</li>
+  </ul>
+  <p>
+    If you choose to block certain cookies, some features of our website may not function
+    correctly.
+  </p>
+
+  <h2>6. Changes to This Cookie Policy</h2>
+  <p>
+    We may update this Cookie Policy from time to time as our website and products change
+    or as legal requirements evolve. The “Last updated” date at the top indicates the most
+    recent version.
+  </p>
+
+  <h2>7. Contact Us</h2>
+  <p>
+    If you have any questions about our use of cookies or this policy, please contact us at:
+  </p>
+  <p>
+    <strong>Email:</strong> <a href="mailto:metaroottech@outlook.com">metaroottech@outlook.com</a><br />
+    <strong>Website:</strong> <a href="https://metaroot.tech">https://metaroot.tech</a>
+  </p>
+
+  <footer>
+    <div>© 2025 MetaRoot Technologies Ltd.</div>
+    <div class="footer-links">
+      <a href="index.html">Back to Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    const toggleBtn = document.getElementById('themeToggle');
+    if (!toggleBtn) return;
+
+    const stored = localStorage.getItem('metaroot-theme');
+    if (stored === 'light') {
+      document.body.classList.add('light-theme');
+      toggleBtn.textContent = '☾';
+    } else {
+      toggleBtn.textContent = '☀';
+    }
+
+    toggleBtn.addEventListener('click', function () {
+      const isLight = document.body.classList.toggle('light-theme');
+      toggleBtn.textContent = isLight ? '☾' : '☀';
+      localStorage.setItem('metaroot-theme', isLight ? 'light' : 'dark');
+    });
+  })();
+</script>
 </body>
 </html>
